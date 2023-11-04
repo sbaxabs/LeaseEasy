@@ -2,11 +2,11 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-# Get HTML
-aptlist_url = "https://jsmliving.com/buildings"
-aptlist_response = requests.get(aptlist_url)
-aptlist_html_content = aptlist_response.content
-apt_soup = BeautifulSoup(aptlist_html_content, "html.parser")
+# Get JSM HTML
+jsm_url = "https://jsmliving.com/buildings"
+jsm_response = requests.get(jsm_url)
+jsm_html_content = jsm_response.content
+apt_soup = BeautifulSoup(jsm_html_content, "html.parser")
 
 # Find all the apartment buildings
 building_cards = apt_soup.find_all("div", class_="building__card-content")
@@ -46,4 +46,13 @@ for card in building_cards:
     room_data = {location:floorplan}
     jsm_locations.append(room_data)
 
-print("hello")
+
+######UGROUP TIMEEEEEEEEEEE
+ugroup_url = https://ugroupcu.com/apartment-search/
+ugroup_response = requests.get(ugroup_url)
+ugroup_html_content = ugroup_response.content
+ugroup_soup = BeautifulSoup(ugroup_html_content, "html.parser")
+
+# Find all the apartment buildings
+building_cards = ugroup_soup.find_all("div", class_="property-list col-lg-5") #Possibly property-list-box flex
+jsm_locations = []

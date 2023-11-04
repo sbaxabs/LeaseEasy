@@ -38,7 +38,7 @@ for card in ugroup_cards:
     floorplan = []
 
     # Loop through bedroom tabs
-    room_elements = location_soup.find_all("div", class_="views-element-container form-group")
+    room_elements = location_soup.find_all("div", class_="tab-content_in_wrapp tab-cntnt_wrap_btm")
     for parent_div in room_elements:
         room_divs = parent_div.find_all('div', class_=lambda x: x and "unit__bedrooms-button js" in x and 'js-' in x)
 
@@ -49,16 +49,16 @@ for card in ugroup_cards:
         for room_div in room_divs:
             floorplan.append(room_div.text)
     room_data = {location:floorplan}
-    jsm_locations.append(room_data)
+    ugroup_locations.append(room_data)
 
 
 # Items to consider
 # Price
 # Bedroom Number
 # Bathroom Number
-location
-link
-Square footage?
+# location
+# link
+# Square footage?
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',

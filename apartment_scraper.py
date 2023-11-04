@@ -27,7 +27,6 @@ for card in building_cards:
     location_soup = BeautifulSoup(location_html_content, "html.parser")
 
     # Initialize dictionary that stores a list of Room bedroom types
-    room_data = {}
 
     # Initialize the array to be in the dict
     floorplan = []
@@ -43,5 +42,7 @@ for card in building_cards:
         # Append room_data dictionary to jsm_locations list
         for room_div in room_divs:
             floorplan.append(room_div.text)
-    room_data = {location:floorplan}
-    jsm_locations.append(room_data)
+        room_data = [location,floorplan]
+        jsm_locations.append(room_data)
+
+print(jsm_locations)

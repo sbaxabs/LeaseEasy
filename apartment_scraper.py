@@ -56,3 +56,12 @@ ugroup_soup = BeautifulSoup(ugroup_html_content, "html.parser")
 # Find all the apartment buildings
 building_cards = ugroup_soup.find_all("div", class_="property-list col-lg-5") #Possibly property-list-box flex
 jsm_locations = []
+
+
+# Items to consider
+# Price
+# Bedroom Number
+# Bathroom Number
+# location
+# link
+# Square footage?

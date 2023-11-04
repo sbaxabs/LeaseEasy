@@ -1,6 +1,9 @@
 import requests
 import json
 from bs4 import BeautifulSoup
+from flask import Flask
+
+app = Flask(__searcher__)
 
 ######UGROUP TIMEEEEEEEEEEE
 ugroup_url = "https://ugroupcu.com/building-list/"

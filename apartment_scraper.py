@@ -46,6 +46,4 @@ for card in building_cards:
     room_data = {location:floorplan}
     jsm_locations.append(room_data)
 
-with open("./apt_json/JSM.json", "w") as f:
-    json.dump(jsm_locations, f)
 print("hello")

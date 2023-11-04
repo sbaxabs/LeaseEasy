@@ -3,7 +3,7 @@ import json
 from bs4 import BeautifulSoup
 from flask import Flask
 
-app = Flask(__searcher__)
+# app = Flask(__searcher__)
 
 ######UGROUP TIMEEEEEEEEEEE
 ugroup_url = "https://ugroupcu.com/building-list/"
@@ -21,17 +21,14 @@ for card in ugroup_cards:
 
     # Getting HTML response of each of these buildings
     location_element = card.find("div", class_="col-lg-6 propert_sm_detail").find("h3")
-    location = location_element.text.strip() 
-    print(location)   
+    location = location_element.text.strip()  
     detail_element = card.find("div", class_="col-lg-6 propert_sm_detail").find("a")
     href = detail_element["href"]
     location_url = href
-    ugroup_locations.append(location_url)
 
 
     # Get HTML response and content
     location_response = requests.get(location_url, headers={"User-Agent": "XY"})
-    print(location_response.status_code)
     location_html_content = location_response.content
     location_soup = BeautifulSoup(location_html_content, "html.parser")
     

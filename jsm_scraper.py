@@ -42,13 +42,11 @@ for card in building_cards:
             elif "Baths" in part:
                 baths = int(part.split()[0])  # Extract the number before "Baths" and convert it to an integer
 
-        print(layout_name)
         info = layout.find_all("td")
         li_list = []
         for poop in info:
             poopy = poop.text.strip()
             li_list.append(poopy)
-        print(li_list)
         if len(li_list) >= 3:
             room_data = [beds, li_list[1], baths]
             jsm_locations.append([location, room_data])

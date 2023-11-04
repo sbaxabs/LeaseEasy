@@ -42,10 +42,12 @@ for card in ugroup_cards:
         for poop in info:
             poopy = poop.text.strip()
             li_list.append(poopy)
-        room_data = [room_numba,li_list[1],li_list[7]]
-        print(room_data)
-        ugroup_locations.append([location,room_data])
-    
+        if len(li_list) >= 8:
+            room_data = [room_numba, li_list[1], li_list[7]]
+            ugroup_locations.append([location, room_data])
+        else:
+            pass
+print(ugroup_locations)
 
 
 # Items to consider

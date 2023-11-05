@@ -119,7 +119,7 @@ def generate_html_element(data):
             <div class="card-info-content">
                 <div class="content">
                     <img src="./images/bed.svg" alt="">
-                    <p>{data[1][0]}</p>
+                    <p>{data[1]}</p>
                 </div>
                 <div class="content">
                     <img src="./images/size.svg" alt="">
@@ -127,11 +127,11 @@ def generate_html_element(data):
                 </div>
                 <div class="content">
                     <img src="./images/area.svg" alt="">
-                    <p>{data[1][2]}</p>
+                    <p>{data[3]}</p>
                 </div>
             </div>
             <div class="price">
-                <p>{data[1][1]}</p>
+                <p>{data[2]}</p>
                 <a href="" class="booking-btn">Book Now</a>
             </div>
         </div>
@@ -146,3 +146,4 @@ print(generated_elements)
 # Write the HTML content to a file
 with open("smile_output.html", "w", encoding="utf-8") as html_file:
     html_file.write(generated_elements)
+

@@ -53,10 +53,45 @@ for card in building_cards:
         else:
             pass
 
+def generate_html_element(data):
+    # Customize this function to generate the HTML element based on your data
+    return f'''<div class="product-card">
+        <img src="./images/jsm.png" alt="" class="product-img">
+        <div class="card-info">
+            <div class="card-info-content">
+                <img src="./images/location.svg" alt="">
+                <p class="loaction-name">{data[0]}</p>
+            </div>
+            <div class="card-info-content">
+                <div class="content">
+                    <img src="./images/bed.svg" alt="">
+                    <p>{data[1][0]} Bedroom</p>
+                </div>
+                <div class="content">
+                    <img src="./images/size.svg" alt="">
+                    <p>10x10m</p>
+                </div>
+                <div class="content">
+                    <img src="./images/area.svg" alt="">
+                    <p>{data[1][2]} Bathroom</p>
+                </div>
+            </div>
+            <div class="price">
+                <p>{data[1][1]}</p>
+                <a href="" class="booking-btn">Book Now</a>
+            </div>
+        </div>
+    </div>'''
+generated_elements = ""
+for i in jsm_locations:
+    product_card = generate_html_element(i)
+    generated_elements += "\n"+product_card
+print(generated_elements)
 
-    
 
-print(jsm_locations)
+# Write the HTML content to a file
+with open("jsm_output.html", "w", encoding="utf-8") as html_file:
+    html_file.write(generated_elements)
 
 
 

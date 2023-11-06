@@ -48,7 +48,7 @@ for card in building_cards:
             poopy = poop.text.strip()
             li_list.append(poopy)
         if len(li_list) >= 3:
-            room_data = [beds, li_list[1], baths]
+            room_data = [beds, li_list[1], baths, location_url]
             jsm_locations.append([location, room_data])
         else:
             pass
@@ -78,7 +78,7 @@ def generate_html_element(data):
             </div>
             <div class="price">
                 <p>{data[1][1]}</p>
-                <a href="" class="booking-btn">Book Now</a>
+                <a href="{data[1][3]}" class="booking-btn">Book Now</a>
             </div>
         </div>
     </div>'''

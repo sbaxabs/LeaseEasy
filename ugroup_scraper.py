@@ -43,7 +43,7 @@ for card in ugroup_cards:
             poopy = poop.text.strip()
             li_list.append(poopy)
         if len(li_list) >= 8:
-            room_data = [room_numba, li_list[1], li_list[7]]
+            room_data = [room_numba, li_list[1], li_list[7], location_url]
             ugroup_locations.append([location, room_data])
         else:
             pass
@@ -75,7 +75,7 @@ def generate_html_element(data):
             </div>
             <div class="price">
                 <p>{data[1][1]}</p>
-                <a href="" class="booking-btn">Book Now</a>
+                <a href="{data[1][3]}" class="booking-btn">Book Now</a>
             </div>
         </div>
     </div>'''
